@@ -1,0 +1,42 @@
+html
+  head
+    title big: bouzuya icon generator
+    link(rel='stylesheet',type='text/css',href='http://fonts.googleapis.com/css?family=Fredoka+One')
+    script(type='text/javascript',src='http://code.jquery.com/jquery-1.10.1.min.js')
+    script(type='text/javascript',src='https://raw.github.com/davatron5000/FitText.js/master/jquery.fittext.js')
+    script(type='text/javascript').
+      $(document).ready(function() {
+        $('#face').fitText(0.225);
+      });
+    style(type='text/css').
+      body {
+        margin: 0;
+        padding: 0;
+        cursor: pointer;
+      }
+      @font-face {
+        font-family: 'Fredoka One';
+        font-style: normal;
+        font-weight: 400;
+        src: url(http://themes.googleusercontent.com/static/fonts/fredokaone/v1/SL0aFUFfkFMMdariYQ3_YYbN6UDyHWBl620a-IRfuBk.woff) format('woff');
+      }
+      #background {
+        background-color: #4f6c42;
+        border-radius: 5px;
+        height: 100%;
+        width: 100%;
+      }
+      #face {
+        position: fixed;
+        top: 50%;
+        width: 100%;
+        margin-top: -27.5%;
+        text-align: center;
+        line-height: 1;
+        color: #ffffff;
+        font-family: 'Fredoka One';
+        text-decoration: none;
+      }
+  body
+    div(id='background')
+      a(id='face', href='/capture') ([:-P

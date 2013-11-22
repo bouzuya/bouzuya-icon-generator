@@ -1,0 +1,30 @@
+{
+  "name": "bouzuya-icon-generator",
+  "version": "0.1.0",
+  "description": "bouzuya icon generator.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "test": "mocha --reporter spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/bouzuya/bouzuya-icon-generator.git"
+  },
+  "author": "bouzuya",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/bouzuya/bouzuya-icon-generator/issues"
+  },
+  "homepage": "https://github.com/bouzuya/bouzuya-icon-generator",
+  "dependencies": {
+    "express": "~3.4.4",
+    "node-phantom": "~0.2.5",
+    "async": "~0.2.9",
+    "jade": "~0.35.0",
+    "phantomjs": "~1.9.2-4"
+  },
+  "engines": {
+    "node": "~0.10.22"
+  }
+}
