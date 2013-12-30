@@ -11,7 +11,16 @@ app.get('/capture', function(req, res) {
     height: 120,
     file: './bouzuya-120x120.png'
   }, function(err) {
-    res.redirect('/');
+    if (err) throw err;
+    capture({
+      url: 'http://localhost:3333/',
+      width: 200,
+      height: 200,
+      file: './bouzuya-200x200.png'
+    }, function(err) {
+      if (err) throw err;
+      res.redirect('/');
+    });
   });
 });
 app.listen(3333);
