@@ -1,6 +1,6 @@
 {
   "name": "bouzuya-icon-generator",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "bouzuya icon generator.",
   "main": "index.js",
   "scripts": {
