@@ -9,3 +9,14 @@ Usage
     $ npm install
     $ npm start
     $ curl http://localhost:3333/capture
+
+License
+------------------------------------------------------------------------------
+
+### > 0.2.0
+
+MIT
+
+### <= 0.2.0
+
+BSD-2-Clause
