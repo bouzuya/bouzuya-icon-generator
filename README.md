@@ -1,22 +1,27 @@
-bouzuya icon generator
-==============================================================================
+# bouzuya icon generator
 
-bouzuya icon generator.
+bouzuya icon (`([:-P`) generator. 
 
-Usage
-------------------------------------------------------------------------------
+## Installation
 
-    $ npm install
-    $ npm start
-    $ curl http://localhost:3333/capture
+    $ npm install -g bouzuya/bouzuya-icon-generator
 
-License
-------------------------------------------------------------------------------
+## Usage
 
-### > 0.2.0
+    $ big
+    $ ls -1
+    bouzuya-120x120.png
+    $ big -s 480
+    $ ls -1
+    bouzuya-120x120.png
+    bouzuya-480x480.png
+
+## License
+
+### Version > 0.2.0
 
 MIT
 
-### <= 0.2.0
+### Version <= 0.2.0
 
 BSD-2-Clause
