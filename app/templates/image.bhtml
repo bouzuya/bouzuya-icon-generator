@@ -1,0 +1,4 @@
+<div
+  @class image
+  </img
+    @v-attr alt: alt, src: src, width: width, height: height
