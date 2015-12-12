@@ -5,8 +5,8 @@
     <h1
       @class app-title
       <a
-        @href https://github.com/b-html/b-html
-        b-html logo
+        @href https://github.com/bouzuya/bouzuya-icon-generator
+        bouzuya icon
   <div
     @class app-content
     <div
