@@ -1,4 +1,0 @@
-<div
-  @class canvas
-  <canvas
-    @v-el canvas
