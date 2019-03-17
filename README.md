@@ -2,14 +2,12 @@
 
 bouzuya icon generator.
 
-v3.x is [b-html/b-html](https://github.com/b-html/b-html) fork.
-
 ## Installation & Usage
 
     $ git clone https://github.com/bouzuya/bouzuya-icon-generator
     $ cd bouzuya-icon-generator/
     $ npm install
-    $ npm run watch
+    $ npm run build
 
 ## History
 
