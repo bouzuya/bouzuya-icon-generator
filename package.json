@@ -11,13 +11,13 @@
     "url": "https://github.com/bouzuya/bouzuya-icon-generator/issues"
   },
   "dependencies": {
-    "@types/node": "^11.11.3",
-    "@types/selenium-webdriver": "^3.0.15",
-    "geckodriver": "^1.16.0",
+    "@types/node": "^11.13.13",
+    "@types/selenium-webdriver": "^3.0.16",
+    "geckodriver": "^1.16.2",
     "npm-run-all": "^4.1.5",
     "selenium-webdriver": "^4.0.0-alpha.1",
-    "ts-node": "^8.0.3",
-    "typescript": "^3.3.3333"
+    "ts-node": "^8.2.0",
+    "typescript": "^3.5.1"
   },
   "homepage": "https://github.com/bouzuya/bouzuya-icon-generator",
   "keywords": [],
