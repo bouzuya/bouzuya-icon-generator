@@ -1,7 +1,7 @@
-import fs from 'fs';
+import fs from 'node:fs';
+import http from 'node:http';
 import { Builder } from 'selenium-webdriver';
 import firefox from 'selenium-webdriver/firefox';
-import http from 'http';
 
 interface Options {
   height: number;
@@ -10,14 +10,12 @@ interface Options {
   width: number;
 }
 
-const getPNG = (pngDataUrl: string): Buffer => {
-  const pngEncoded = pngDataUrl.substring('data:image/png;base64,'.length);
-  const png = Buffer.from(pngEncoded, 'base64');
-  return png;
+const getPNG = (pngDataUrl: string): string => {
+  return pngDataUrl.substring('data:image/png;base64,'.length);
 };
 
 // data:image/png;base64,...
-const getPNGDataURL = async (
+const getPNGDataURL = (
   svgDataUrl: string,
   width: number,
   height: number
@@ -50,13 +48,19 @@ const getPNGDataURL = async (
       !pngDataUrl.startsWith('data:image/png;base64,')
     ) throw new Error('unknown format');
     return pngDataUrl;
+  }).then((v) => {
+    if (typeof v === 'undefined') {
+      throw new Error();
+    } else {
+      return v;
+    }
   });
 };
 
 // data:image/svg+xml;base64,...
 const getSVGDataURL = async (svg: string): Promise<string> => {
   const svgEncoded = Buffer.from(svg, 'utf8').toString('base64');
-  return 'data:image/svg+xml;base64,' + svgEncoded;
+  return await Promise.resolve('data:image/svg+xml;base64,' + svgEncoded);
 };
 
 const parseOptions = (): Options => {
@@ -71,22 +75,26 @@ const parseOptions = (): Options => {
   return { height, pngPath, svgPath, width };
 };
 
-const runServer = <T>(
-  callback: (port: number) => Promise<T>
-): Promise<T> => {
+const runServer = (
+  callback: (port: number) => Promise<string>
+): Promise<string | undefined> => {
   return new Promise((resolve, reject) => {
     const server = http.createServer((_, res) => res.end());
-    const close = (v?: T): void => {
+    const close = (v?: string): void => {
       server.close((error) => {
         if (typeof error !== 'undefined') reject(error);
         else resolve(v);
       });
     };
     server.listen(() => {
-      const port = (server.address() as any).port;
-      Promise.resolve()
-        .then(() => callback(port))
-        .then((v) => close(v), () => close());
+      const address = server.address();
+      if (typeof address === 'string') {
+        return close();
+      } else if (address === null) {
+        return close();
+      } else {
+        return callback(address.port).then((v) => close(v), () => close());
+      }
     });
   });
 };
@@ -99,7 +107,7 @@ const main = async (): Promise<void> => {
     svgDataUrl, options.width, options.height
   );
   const png = getPNG(pngDataUrl);
-  fs.writeFileSync(options.pngPath, png, { encoding: 'buffer' });
+  fs.writeFileSync(options.pngPath, png, { encoding: 'base64' });
 };
 
 main();
