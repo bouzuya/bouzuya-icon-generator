@@ -1,7 +1,8 @@
 [package]
 name = "bouzuya-icon-generator"
-version = "0.1.0"
+version = "5.0.0"
 edition = "2024"
+publish = false
 
 [dependencies]
 anyhow = "1.0.100"
