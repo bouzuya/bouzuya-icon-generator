@@ -6,10 +6,13 @@ bouzuya icon generator.
 
     $ git clone https://github.com/bouzuya/bouzuya-icon-generator
     $ cd bouzuya-icon-generator/
-    $ npm install
-    $ npm run build
+    $ cargo run archives/v4/bouzuya.svg archives/v4/
 
 ## History
+
+### v4
+
+![bouzuya icon v4](archives/v4/bouzuya-600x600.png)
 
 ### v3 (version > 3.x)
 
